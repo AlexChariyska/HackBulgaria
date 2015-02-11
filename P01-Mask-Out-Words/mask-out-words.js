@@ -18,7 +18,8 @@ window.onload = function () {
     });
 
     function MaskOutWords(words, text) {
-        for (var i = 0; i < words.length; i++) {
+        var i;
+        for (i = 0; i < words.length; i++) {
             var searchedWord = new RegExp("(" + words[i] + ")", 'gi');
             var stars = new Array((words[i].length || 1) + 1).join("*");
             text = text.replace(searchedWord, stars);
