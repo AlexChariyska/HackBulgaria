@@ -1,0 +1,6 @@
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\bin\Debug\Logger.exe.config
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\bin\Debug\Logger.exe
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\bin\Debug\Logger.pdb
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\obj\Debug\Logger.exe
+c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\obj\Debug\Logger.pdb
