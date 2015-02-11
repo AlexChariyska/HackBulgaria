@@ -23,7 +23,7 @@
                 if (value == null)
                 {
                     //Random file for test purposes.
-                    file = "";
+                    file = @"C:\Users\Public\test.txt";
                 }
                 else
                 {

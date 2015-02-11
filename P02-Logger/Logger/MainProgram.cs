@@ -10,11 +10,11 @@
             consoleTest.Log(2, "Hello!");
 
             //If you want to enter a specific path to file for the reguest you can pass it as a parameter in the constructor.Example:
-            //var fileTestWithParam = new FileLogger(@"C:\Users\Public\TestFolder\test.txt");
+            //var fileTestWithParam = new FileLogger(@"C:\Users\Public\test.txt");
             //fileTestWithParam.Log(1, "Hello!");
 
             var fileTest = new FileLogger();
-            fileTest.Log(1, "Hello!");
+            fileTest.Log(3, "Hello!");
 
             //If you want to enter a specific url for the reguest you can pass it as a parameter in the constructor.Example:
             //var htmlPostLogWithParam = new HTMLLogger("http://www.novini.bg/");

@@ -4,3 +4,9 @@ c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\bin\Debug\Logg
 c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\bin\Debug\Logger.pdb
 c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\obj\Debug\Logger.exe
 c:\users\alex\documents\visual studio 2013\Projects\Logger\Logger\obj\Debug\Logger.pdb
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\bin\Debug\Logger.exe.config
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\obj\Debug\Logger.exe
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\obj\Debug\Logger.pdb
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\bin\Debug\Logger.exe
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\bin\Debug\Logger.pdb
+C:\Users\Alex\Desktop\New folder (2)\HackBulgaria\P02-Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
