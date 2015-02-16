@@ -16,7 +16,6 @@ window.onload = function () {
             } catch (error) {
                 fileDisplayArea.innerText = "Invalid data. Please insert a new file."
             }
-
         };
 
         reader.readAsText(file);
@@ -24,10 +23,17 @@ window.onload = function () {
     });
 
     document.getElementById('submit-command').addEventListener('click', function (ev) {
-        btnClear.click();
         var queryInput = document.getElementById("command-input").value;
-        var queryCommandsSplit = queryInput.split(" ");
-        var command = queryCommandsSplit[0].trim().toLowerCase();
+        var queryCommandsSplit = queryInput.replace(",", " ").split(" ");
+
+        // Checks if there are empty values and returns only non empty.
+        queryCommandsSplit = queryCommandsSplit.filter(function (e) {
+            return e;
+        });
+
+        var command = queryCommandsSplit[0].toLowerCase();
+
+        btnClear.click();
 
         /**
          *Removes the first element which is the command and is unnecessary anymore.
@@ -45,11 +51,10 @@ window.onload = function () {
                 var limitPassed;
 
                 // Remove the last two elements if there is a limit command, so that only the arguments are left.
-                if ( limitCommand != undefined && limitCommand.toLowerCase() == 'limit') {
+                if (limitCommand != undefined && limitCommand.toLowerCase() == 'limit') {
                     queryCommandsSplit.pop();
                     queryCommandsSplit.pop();
                     limitPassed = limitNumber;
-
                 }
 
                 for (elements = 0; elements < dataForSearch.length; elements++) {
@@ -84,7 +89,6 @@ window.onload = function () {
                             dataObj[searchWord].push(value);
                         }
                     }
-
                 }
 
                 printResults(dataObj);
@@ -145,7 +149,6 @@ window.onload = function () {
         var row = document.getElementById("result-query");
 
         if (limitNumber !== undefined) {
-            debugger;
             for (key in obj) {
                 var col = document.createElement("td");
                 heading = "******<br>" + key + " <br>******";
