@@ -1,7 +1,6 @@
 window.onload = function () {
     var fileInput = document.getElementById('fileInput');
     var fileDisplayArea = document.getElementById('fileDisplayArea');
-    var queryDisplayArea = document.getElementById('queryDisplayArea');
     var btnClear = document.getElementById('clear-command');
     var dataForSearch;
 
@@ -126,6 +125,9 @@ window.onload = function () {
                 }
 
                 printResults(dataObj);
+                break;
+            default:
+                document.getElementById('result-query').innerHTML = "<td> Unsupported command. Please insert a new one! </td>";
                 break;
         }
     });
