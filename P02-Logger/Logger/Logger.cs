@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Logger : ILogger
+    public abstract class Logger : ILogger
     {
         private string levelType;
 
