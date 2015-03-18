@@ -1,0 +1,19 @@
+{
+  "name": "week1",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "HackBg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bb",
+    "test",
+    "tests",
+    "public/lib"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0"
+  }
+}
