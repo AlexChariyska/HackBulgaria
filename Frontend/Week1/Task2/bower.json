@@ -1,0 +1,12 @@
+{
+  "name": "Task2",
+  "version": "0.0.0",
+  "description": "Hack - Task 2 - Blog",
+  "authors": [
+    "Alex"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}
