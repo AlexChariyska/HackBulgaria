@@ -1,0 +1,11 @@
+{
+  "name": "Task2",
+  "version": "0.0.0",
+  "description": "Hack - Task 3 - Jade Blog",
+  "authors": [
+    "Alex"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}

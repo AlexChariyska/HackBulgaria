@@ -1,0 +1,11 @@
+include ./includes/navigation.jade
+section#wrapper
+    article.box
+        h1= post.title
+        hr
+        h3 Author:
+            span=post.author
+        h3 Posted on:
+            span=post.date
+        img(src=post.img)
+        p.text= post.text

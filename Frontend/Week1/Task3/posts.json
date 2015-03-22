@@ -1,0 +1,30 @@
+{
+  "post1": {
+    "img": "img/1.jpeg",
+    "author":"K. Jay",
+    "date":"03.03.2015",
+    "title": "Chasing Unknown Unknown, The Spirit Of Silicon Valley",
+    "text": "Vivamus tristique sem a eros tempor, hendrerit lobortis lorem venenatis. Nullam bibendum magna quis quam ultricies, vitae bibendum lacus commodo. Phasellus pharetra eget ipsum non pulvinar. Nam nec mattis magna, ac ultrices elit. Mauris justo tortor, dignissim eu mi ullamcorper, porttitor pulvinar nibh. Aliquam sed odio sit amet lectus porta maximus eu lobortis ex. Duis convallis purus eu finibus maximus. Aliquam diam tortor, tincidunt vitae tempus eget, tincidunt id ex. Suspendisse urna odio, pulvinar suscipit orci eu, aliquet dictum dolor. Sed sed venenatis augue, sit amet gravida ex. Nulla facilisi."
+  },
+  "post2": {
+    "img": "img/2.png",
+    "author": "Mr. Bean",
+    "date":"10.03.2015",
+    "title": "The Good, The Bad, and The Ugly of CrossFit",
+    "text": "Quisque in arcu vitae ante consectetur mattis vulputate a mi. Donec nec leo dapibus, venenatis risus ut, vehicula felis. Maecenas elit est, lacinia dignissim ante a, consectetur scelerisque nibh. Donec vel pulvinar purus. Nam et dolor at augue consectetur venenatis. Nulla in nulla urna. Quisque imperdiet molestie tellus, nec sollicitudin odio viverra vel. Nulla et nibh ut leo tincidunt tempus"
+  },
+  "post3": {
+    "img": "img/5.jpg",
+    "author":"Dr. X",
+    "date":"15.02.2015",
+    "title": "Disruptive Enterprise Platform Sales: Why Buy Anything, Buy Mine, Buy Now - Part III",
+    "text": "In non ornare ex. Fusce sollicitudin ligula turpis, ac lacinia eros porta id. Nunc magna tellus, feugiat non vehicula vitae, aliquet a lectus. Integer laoreet est sed justo imperdiet scelerisque. Aliquam convallis auctor mauris, a pellentesque risus hendrerit sed. Aliquam a turpis molestie, consequat tellus faucibus, convallis ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean a ligula sit amet erat suscipit consequat eget quis erat. Nulla ac accumsan lacus. Sed consequat turpis pretium felis semper accumsan. Maecenas vel ante quis lacus venenatis luctus a vel lectus."
+  },
+  "post3": {
+    "img": "img/4.jpg",
+    "author":"Nicolas Cage",
+    "date":"01.001.2015",
+    "title": "Cloud Computing",
+    "text": "Phasellus et leo tellus. In at placerat purus. Donec vel aliquam massa. Suspendisse rutrum molestie erat, ut iaculis enim malesuada quis. Quisque pretium, sapien id porttitor pharetra, augue purus tempor orci, non porta lorem leo sed metus. Duis vitae scelerisque lacus. Cras ac libero neque. In nec dui eu odio commodo gravida. Nullam feugiat nibh vitae sodales posuere."
+  }
+}

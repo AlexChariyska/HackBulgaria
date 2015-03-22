@@ -1,0 +1,124 @@
+body {
+    background-image: url("../img/pattern.jpg");
+    font-family: FreeSerif;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 1.4em;
+    line-height: 0.5;
+}
+
+h1 a {
+    color: #CB0C11;
+    text-decoration: none;
+}
+
+h1 a:hover, a:visited {
+    color: #A00000;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 1.2em;
+    line-height: 0.5;
+}
+
+header {
+    background-image: url("../img/banner.jpg");
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#nav_wrapper {
+    float: right;
+    width: 15%;
+    position: relative;
+    top: 80px;
+}
+
+#navigation h4 {
+    text-align: center;
+}
+
+#wrapper {
+    width: 100%;
+    position: relative;
+    top: 80px;
+}
+
+.box {
+    border: 1px solid black;
+    background: #CDC7B9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 29%;
+    height: 400px;
+    margin: 1%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.info ul {
+    width: 48%;
+    margin: 0 10px;
+    font-size: 14px;
+    float: left;
+}
+
+img {
+    height: 100px;
+    width: 36%;
+    border-radius: 5px;
+    float: left;
+}
+
+button{
+    margin: 20px auto;
+    background: #CB0C11;
+    display: block;
+    border-radius: 5px;
+}
+#wrapper button a{
+    color:#fff;
+    padding: 10px 15px;
+    display: block;
+}
+
+button:hover {
+    background: #A00000;
+}
+
+.nav li{
+    display: inline-block;
+    list-style: none;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 50px;
+    top: 40px;
+    left: 20%;
+}
+.nav li a{
+    text-decoration: none;
+    color: #fff;
+}
+.nav li a:hover {
+    cursor: pointer;
+    color: #000;
+}
+.product{
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid black;
+    background: #CDC7B9;
+    border-radius: 10px;
+}
+.product img{
+    width: 200px;
+    height: 150px;
+}

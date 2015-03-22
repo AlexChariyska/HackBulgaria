@@ -1,0 +1,17 @@
+{
+  "name": "Task2",
+  "version": "0.0.0",
+  "description": "Task 3 - Homework-Shopping Cart",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3",
+    "jade": "^1.9.2"
+  },
+  "devDependencies": {}
+}

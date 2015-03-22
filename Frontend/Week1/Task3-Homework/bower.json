@@ -1,0 +1,11 @@
+{
+  "name": "Task2",
+  "version": "0.0.0",
+  "description": "Task 3 - Homework-Shopping Cart",
+  "authors": [
+    "Alex"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}

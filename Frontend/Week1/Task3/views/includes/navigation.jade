@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title My blog with jade template
+        link(href='css/main.css', rel="stylesheet", type="text/css")
+    body
+        header
+            h1 Hello :)
+        #nav_wrapper
+            #navigation.box
+                h4 Navigation menu:
+                ul#books
+                    li: a(href="/") Home
+                h4 Categories:
+                ul#categories
+                    li: a(href="#") IT
+                    li: a(href="#") Java
+                    li: a(href="#") JavaScript

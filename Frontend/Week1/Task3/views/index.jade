@@ -1,0 +1,14 @@
+include ./includes/navigation.jade
+section#wrapper
+    article.box
+        each post, id in posts
+            hr
+            article.box
+                h1
+                    a.title(href="/" + id + ".html")= post.title
+                h3 Author:
+                    span=post.author
+                h3 Posted on:
+                    span=post.date
+                p.text= post.text
+
