@@ -1,0 +1,61 @@
+body {
+    background: #000;
+    font-family: FreeSerif;
+    line-height: 1;
+    font-size: 18px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 1.5em;
+    line-height: 0.8;
+}
+
+h3 {
+    font-size: 1.1em;
+    line-height: 0.5;
+    font-style: italic;
+}
+
+a {
+    color: #fff;
+}
+
+header {
+    background: url("../img/banner.jpg");;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+#nav_wrapper {
+    float: right;
+    width: 15%;
+    position: relative;
+    top: 80px;
+}
+
+#navigation h4 {
+    text-align: center;
+}
+
+#wrapper {
+    width: 80%;
+    position: relative;
+    top: 80px;
+}
+
+.box {
+    border: 1px solid black;
+    background: #021C4D;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.box img {
+    width: 25%;
+    height: 200px;
+}
