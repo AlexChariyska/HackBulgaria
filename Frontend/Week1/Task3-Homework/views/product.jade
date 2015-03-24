@@ -1,0 +1,19 @@
+include ./includes/header.jade
+section#wrapper
+    article.product
+        h1=item.item
+        h2 Price:
+            span=item.price
+        p Posted on:
+            time=item.date
+        .info-product
+            img(src=item.img)
+            ul
+                li Display:
+                    span=item.display
+                li=item.CPU
+                li RAM:
+                    span=item.ram
+            p=item.info
+            button
+                a(onclick="add(items[id])") Add to Cart

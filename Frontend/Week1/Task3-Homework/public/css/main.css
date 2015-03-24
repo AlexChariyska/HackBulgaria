@@ -69,12 +69,19 @@ header {
     font-size: 14px;
     float: left;
 }
+.info-product ul{
+    width: 20%;
+    margin: 0 10px;
+    font-size: 14px;
+    float: left;
+}
 
 img {
     height: 100px;
     width: 36%;
     border-radius: 5px;
     float: left;
+    margin-right: 30px;
 }
 
 button{
@@ -112,6 +119,7 @@ button:hover {
 }
 .product{
     width: 90%;
+    height: 350px;
     padding: 20px;
     margin: 20px auto;
     border: 1px solid black;

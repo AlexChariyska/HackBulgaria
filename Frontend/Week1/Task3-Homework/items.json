@@ -1,0 +1,42 @@
+{
+  "item1": {
+    "img": "img/1.jpg",
+    "price":"2000 BGN",
+    "date":"03.03.2015",
+    "item": "Tablet",
+    "display": "7' QHD, MULTITOUCH",
+    "CPU":"CPU INTEL T Z3745 QUAD CORE 1.86GHZ, 2M CACHE",
+    "ram":"RAM 1 GB, ROM 16 GB",
+    "info":"OS ANDROID KITKAT 4.4, ROM 16 GB, WIRELESS 802.11 B/G/N, BLUETOOTH 4.0, GPS, 9 hours battery life"
+  },
+  "item2": {
+    "img": "img/2.jpg",
+    "price":"200 BGN",
+    "date":"03.03.2015",
+    "item": "Laptop Lenovo Yoga",
+    "display": "13' QHD, MULTITOUCH",
+    "CPU":"CPU INTEL CORE M-5Y71",
+    "ram":"RAM 8 GB",
+    "info":"BLUETOOTH 4.0, 802.11 A/C WIFI, GIGA LAN, 2 X USB 3.0, 1 X DC-IN WITH USB 2.0 FUNCTION, 4-IN-1 CARD READER (SD, MMC, SDXC, SDHC), MICRO-HDMI OUT, AUDIO COMBO JACK, OS WINDOWS 8.1, battery life up to 7.30h., Weight: 1.2 kg"
+  },
+  "item3": {
+    "img": "img/4.jpg",
+    "price": "4050 BGN",
+    "date": "03.03.2015",
+    "item": "Laptop Asus",
+    "display": "17' QHD, MULTITOUCH",
+    "CPU": "CPU INTEL CORE M-5Y71",
+    "ram":"RAM 16 GB",
+    "info":"CAMERA HD 72OP, BLUETOOTH 4.0, 802.11 A/C WIFI, GIGA LAN, 2 X USB 3.0, 1 X DC-IN WITH USB 2.0 FUNCTION, 4-IN-1 CARD READER (SD, MMC, SDXC, SDHC), MICRO-HDMI OUT, AUDIO COMBO JACK"
+  },
+  "item4": {
+    "img": "img/4.jpg",
+    "price": "1999 BGN",
+    "date": "03.03.2015",
+    "item": "Laptop HP 505",
+    "display": "16' QHD, MULTITOUCH",
+    "CPU": "CPU INTEL® CORE™ I7-4710HQ 6M CACHE, UP TO 3.50 GH",
+    "ram":"RAM 16 GB",
+    "info":"CAMERA HD 72OP, BLUETOOTH 4.0, 802.11 A/C WIFI, GIGA LAN, 2 X USB 3.0, 1 X DC-IN WITH USB 2.0 FUNCTION, 4-IN-1 CARD READER (SD, MMC, SDXC, SDHC), MICRO-HDMI OUT, AUDIO COMBO JACK"
+  }
+}

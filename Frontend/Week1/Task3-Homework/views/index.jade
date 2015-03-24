@@ -1,90 +1,18 @@
 include ./includes/header.jade
 section#wrapper
-    article.box
-        h1
-            a(href="laptop_yoga") Laptop Lenovo Yoga
-        h2 Price: 1200 BGN
-        p Posted on:
-            time 19.03.2015
-        .info
-            img(src="img/1.jpg")
+    each item, id in items
+        article.box
+            h1
+                a.title(href="/"+id+".html")= item.item
+            h2 Price:
+                span=item.price
+            img(src=item.img)
             ul
-                li DISPLAY 13.3" QHD, MULTITOUCH
-                li CPU INTEL CORE M-5Y71, 4M CACHE, UP TO 2.90 GHZ
-                li RAM 8GB
-                li HDD 512GB SSD
-                li VIDEO INTEGRATED
-                li CAMERA HD 72OP
-                li BLUETOOTH 4.0, 802.11 A/C WIFI, GIGA LAN
-            button
-                a(href="laptop_yoga") More info
-    article.box
-        h1
-            a(href="laptop_yoga") Laptom Asus X505
-        h2 Price: 2000 BGN
-        p Posted on:
-            time 15.03.2015
-        .info
-            img(src='img/2.jpg')
-            ul
-                li DISPLAY 15.6" (39.6 СМ) LED-BACKLIT HD 1366X768
-                li CPU INTEL® CORE™ I7-4710HQ 6M CACHE, UP TO 3.50 GH
-                li RAM 6 GB DDR3, HDD 1000 GB
-                li VIDEO NVIDIA GEFORCE GTX 850 2GB DDR3
-                li WIRELESS 802.11B/G/N, BLUETOOTH 4.0
-                li HD WEBCAM, SD CARDREADER 2X USB2.0, 1XUSB 3.0 HDMI,VGA,
-                li OS FREE DOS
-            button
-                a(href="laptop_yoga") More info
-    article.box
-        h1
-            a(href="tablet") Tablet
-        h2 Price: 200BGN
-        p Posted on:
-            time 01.03.2015
-        .info
-            img(src='img/4.jpg')
-            ul
-                li DISPLAY 10.1" (25.65 CM) LED HD IPS 1280X800
-                li OS ANDROID KITKAT 4.4
-                li CPU INTEL T Z3745 QUAD CORE 1.86GHZ, 2M CACHE
-                li RAM 1 GB, ROM 16 GB
-                li WIRELESS 802.11 B/G/N, BLUETOOTH 4.0, GPS
-                li 9 hours battery life
-            button
-                a(href="tablet") More info
-    article.box
-        h1
-            a(href="laptop_yoga") Laptop Lenovo Yoga
-        h2 Price: 1200 BGN
-        p Posted on:
-            time 19.03.2015
-        .info
-            img(src="img/1.jpg")
-            ul
-                li DISPLAY 13.3" QHD, MULTITOUCH
-                li CPU INTEL CORE M-5Y71, 4M CACHE, UP TO 2.90 GHZ
-                li RAM 8GB
-                li HDD 512GB SSD
-                li VIDEO INTEGRATED
-                li CAMERA HD 72OP
-                li BLUETOOTH 4.0, 802.11 A/C WIFI, GIGA LAN
-            button
-                a(href="laptop_yoga") More info
-    article.box
-        h1
-            a(href="tablet") Tablet
-        h2 Price: 200BGN
-        p Posted on:
-            time 01.03.2015
-        .info
-            img(src='img/4.jpg')
-            ul
-                li DISPLAY 10.1" (25.65 CM) LED HD IPS 1280X800
-                li OS ANDROID KITKAT 4.4
-                li CPU INTEL T Z3745 QUAD CORE 1.86GHZ, 2M CACHE
-                li RAM 1 GB, ROM 16 GB
-                li WIRELESS 802.11 B/G/N, BLUETOOTH 4.0, GPS
-                li 9 hours battery life
-            button
-                a(href="tablet") More info
+                li Display:
+                    span=item.display
+                li=item.CPU
+                li RAM:
+                    span=item.ram
+
+                button
+                    a(href="/" + id + ".html")  More info
