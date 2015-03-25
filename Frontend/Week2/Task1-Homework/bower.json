@@ -1,0 +1,22 @@
+{
+  "name": "week2",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "HackBg",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bb",
+    "test",
+    "tests",
+    "public/lib"
+  ],
+  "homepage": "https://github.com/AlexChariyska/HackBulgaria",
+  "authors": [
+    "Alexandra <alex.chariyska@gmail.com>"
+  ],
+  "keywords": [
+    "Hangman"
+  ]
+}
