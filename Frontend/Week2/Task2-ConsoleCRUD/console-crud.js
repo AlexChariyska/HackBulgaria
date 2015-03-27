@@ -7,7 +7,10 @@ var util = require('util');
 //
 // Start the prompt
 //
-
+var list={};
+jf.readFile(file, function (err, obj) {
+     list = (obj);
+});
 prompt.start();
 printMenu();
 
@@ -18,6 +21,7 @@ function printMenu() {
     console.log('get');
     console.log('remove');
     console.log('update');
+    console.log('save');
     console.log('quit');
     getCommand();
 }
@@ -46,6 +50,9 @@ function getCommand() {
             case "search":
                 search();
                 break;
+            case "save":
+                saveChanges();
+                break;
             default:
                 printMenu();
         }
@@ -53,15 +60,12 @@ function getCommand() {
 }
 
 function printList() {
-    jf.readFile(file, function(err, obj) {
-        console.log("||   id   ||   name    ||   email   ||");
-        for (var key in obj.persons) {
-            var key = obj.persons[key];
+        console.log("||   id    ||   name    ||   email   ||");
+        for (var key in list.persons) {
+            var key = list.persons[key];
             console.log("||    " + key.id + "    ||   " + key.name + "    ||    " + key.email + "    ||");
         }
         printMenu();
-    });
-
 }
 
 function add() {
@@ -71,9 +75,8 @@ function add() {
                 "name": result.name,
                 "email": result.email
             };
-
-            jf.writeFile(file, data, function(err) {
-             /*   list.persons.push(data);*/
+            list.persons.push(data);
+            jf.writeFile(file, list, function (err) {
                 printMenu();
             })
         }
@@ -103,7 +106,10 @@ function removePerson() {
                     list.persons.splice(i, 1);
                 }
             }
-            printMenu();
+
+            jf.writeFile(file, list, function (err) {
+                printMenu();
+            });
         }
     )
 }
@@ -128,15 +134,15 @@ function askForInfo(value) {
             if (result.email !== "") {
                 value.email = result.email;
             }
-            console.log("Your changes: " + svalue);
+            console.log("Your changes: " + value);
             printMenu();
         }
     );
 }
 
-function search(){
+function search() {
     prompt.get(['keywords'], function (err, result) {
-          var keywordsArr = result.keywords.split(" ");
+            var keywordsArr = result.keywords.split(" ");
             iterate(list);
             printMenu();
 
@@ -149,7 +155,7 @@ function search(){
                             for (var i = 0; i < keywordsArr.length; i++) {
                                 var looked = keywordsArr[i];
 
-                                if (obj[property].indexOf(looked)!=-1){
+                                if (obj[property].indexOf(looked) != -1) {
                                     console.log(obj)
                                 }
                             }
@@ -159,4 +165,10 @@ function search(){
             }
         }
     );
+}
+
+function saveChanges(){
+    jf.writeFile(file, list, function(err) {
+        printMenu();
+    })
 }
