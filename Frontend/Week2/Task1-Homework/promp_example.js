@@ -20,7 +20,6 @@ function getWord() {
 
 function guessLetter(hidden) {
     prompt.get(['letter'], function (err, result) {
-        console.log(word);
         var letter = result.letter;
         if (word.indexOf(letter) == -1) {
             lifes--;
