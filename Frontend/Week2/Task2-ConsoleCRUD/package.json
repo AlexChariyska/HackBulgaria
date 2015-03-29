@@ -9,6 +9,7 @@
   "author": "Alex",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^1.0.0",
     "jsonfile": "^2.0.0",
     "prompt": "^0.2.14"
   },

@@ -1,37 +1,33 @@
 "use strict"
 var prompt = require('prompt');
-var file = './list.json';
 var jf = require('jsonfile');
 var util = require('util');
+var chalk = require('chalk');
+var file = './list.json';
 
 //
 // Start the prompt
 //
-var list={};
-jf.readFile(file, function (err, obj) {
-     list = (obj);
-});
+var list = {};
 prompt.start();
 printMenu();
 
 function printMenu() {
-    console.log('Menu options:');
-    console.log('add');
-    console.log('list');
-    console.log('get');
-    console.log('remove');
-    console.log('update');
-    console.log('save');
-    console.log('quit');
+    console.log(chalk.red('Menu options:'));
+    console.log(chalk.green('add'));
+    console.log(chalk.green('list'));
+    console.log(chalk.green('get'));
+    console.log(chalk.green('remove'));
+    console.log(chalk.green('update'));
+    console.log(chalk.green('save'));
+    console.log(chalk.green('load'));
+    console.log(chalk.green('quit'));
     getCommand();
 }
 
-//
-// Get two properties from the user: username and email
-//
 function getCommand() {
     prompt.get(['command'], function (err, result) {
-        switch (result.command) {
+        switch (result.command.trim()) {
             case "add":
                 add();
                 break;
@@ -53,6 +49,12 @@ function getCommand() {
             case "save":
                 saveChanges();
                 break;
+            case "load":
+                loadList();
+                break;
+            case "quit":
+                quitProgram();
+                break;
             default:
                 printMenu();
         }
@@ -60,12 +62,23 @@ function getCommand() {
 }
 
 function printList() {
-        console.log("||   id    ||   name    ||   email   ||");
-        for (var key in list.persons) {
-            var key = list.persons[key];
-            console.log("||    " + key.id + "    ||   " + key.name + "    ||    " + key.email + "    ||");
-        }
-        printMenu();
+    console.log("||id     ||name                ||email               ||");
+    for (var key in list.persons) {
+        var value = list.persons[key];
+        var colId = "||"+addSpace(7)+"||";
+        var colName = "                    ";
+        var colEmail = "||"+addSpace(20)+"||";
+        console.log(table(colId, value.id) + table(colName, value.name) + table(colEmail, value.email));
+    }
+    printMenu();
+}
+
+function addSpace(numberOfSpaces) {
+    var spaces = '';
+    for (var i = 0; i < numberOfSpaces; i++) {
+        spaces += ' ';
+    }
+    return spaces;
 }
 
 function add() {
@@ -76,9 +89,8 @@ function add() {
                 "email": result.email
             };
             list.persons.push(data);
-            jf.writeFile(file, list, function (err) {
-                printMenu();
-            })
+            printMenu();
+
         }
     )
 }
@@ -97,6 +109,7 @@ function getPerson() {
         }
     )
 }
+
 function removePerson() {
     prompt.get(['id'], function (err, result) {
             var id = result.id;
@@ -106,10 +119,7 @@ function removePerson() {
                     list.persons.splice(i, 1);
                 }
             }
-
-            jf.writeFile(file, list, function (err) {
-                printMenu();
-            });
+            printMenu();
         }
     )
 }
@@ -127,12 +137,13 @@ function updatePerson() {
         }
     );
 }
+
 function askForInfo(value) {
     prompt.get(['name', 'email'], function (err, result) {
             if (result.name !== "")
-                value.name = result.name;
+                value.name = result.name.trim();
             if (result.email !== "") {
-                value.email = result.email;
+                value.email = result.email.trim();
             }
             console.log("Your changes: " + value);
             printMenu();
@@ -167,8 +178,28 @@ function search() {
     );
 }
 
-function saveChanges(){
-    jf.writeFile(file, list, function(err) {
+function saveChanges() {
+    jf.writeFile(file, list, function (err) {
         printMenu();
     })
+}
+
+function loadList() {
+    jf.readFile(file, function (err, obj) {
+        list = (obj);
+        printMenu();
+    });
+}
+
+function table(col, value) {
+    var res = col.slice(3, value.length);
+    col = col.replace(res, value);
+
+    return col;
+}
+
+function quitProgram() {
+    console.reset = function () {
+        return process.stdout.write('\\033c');
+    }
 }
