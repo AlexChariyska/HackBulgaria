@@ -12,6 +12,31 @@ var list = {};
 prompt.start();
 printMenu();
 
+//Validation prompt parameter rules
+var schema = {
+    properties: {
+        id: {
+            pattern: /^\d+$/,
+            message: 'Id must be only digits. Try again: '
+        },
+        name: {
+            pattern: /^[a-zA-Z\s\-]+$/,
+            message: 'Name must be only letters, spaces, or dashes. Try again: '
+        },
+        email: {
+            pattern: /\S+@\S+\.\S+/,
+            message: 'Email must be in the format: anystring@anystring.anystring. Try again: '
+        }
+    }
+};
+var idScheme = {
+    properties: {
+        id: {
+            pattern: /^\d+$/,
+            message: 'Id must be only digits. Try again: '
+        }
+    }
+};
 //Prints the menu options and asks for a command to be inserted
 function printMenu() {
     console.log();
@@ -71,7 +96,7 @@ function getCommand() {
 function printList() {
     //Printing the headings of the columns in the table
     console.log();
-    console.log(chalk.bgMagenta(addSpace(7, "Id") + addSpace(20, "Name") + addSpace(20, "Email")));
+    console.log(chalk.bgGreen(addSpace(7, "Id") + addSpace(20, "Name") + addSpace(20, "Email")));
 
     //Printing the values in the columns
     for (var key in list.persons) {
@@ -79,7 +104,7 @@ function printList() {
         var idColumn = addSpace(7, value.id);
         var nameColumn = addSpace(20, value.name);
         var emailColumn = addSpace(20, value.email);
-        console.log(chalk.bgMagenta(idColumn + nameColumn + emailColumn));
+        console.log(chalk.bgGreen(idColumn + nameColumn + emailColumn));
     }
     printMenu();
 }
@@ -100,7 +125,7 @@ function addSpace(numberOfSpaces, value) {
 }
 
 function addPerson() {
-    prompt.get(['id', 'name', 'email'], function (err, result) {
+    prompt.get(schema, function (err, result) {
             var data = {
                 "id": result.id,
                 "name": result.name,
@@ -114,7 +139,7 @@ function addPerson() {
 }
 
 function getPerson() {
-    prompt.get(['id'], function (err, result) {
+    prompt.get(idScheme, function (err, result) {
             var id = result.id;
             for (var i = 0; i < list.persons.length; i++) {
                 var lookedUpId = list.persons[i];
@@ -128,7 +153,7 @@ function getPerson() {
 }
 
 function removePerson() {
-    prompt.get(['id'], function (err, result) {
+    prompt.get(idScheme, function (err, result) {
             var id = result.id;
             var hasId = false;
             for (var i = 0; i < list.persons.length; i++) {
@@ -150,7 +175,7 @@ function removePerson() {
 }
 
 function updatePerson() {
-    prompt.get(['id'], function (err, result) {
+    prompt.get(idScheme, function (err, result) {
             var id = result.id;
             var hasId = false;
             for (var i = 0; i < list.persons.length; i++) {
@@ -170,7 +195,7 @@ function updatePerson() {
 }
 
 function askForPersonParams(value) {
-    prompt.get(['id', 'name', 'email'], function (err, result) {
+    prompt.get(scheme, function (err, result) {
             if (result.id !== "") {
                 value.id = result.id.trim();
             }
@@ -266,10 +291,10 @@ function SortByID(x, y) {
     return x.id - y.id;
 }
 
-function SortByName(x,y) {
+function SortByName(x, y) {
     return ((x.name == y.name) ? 0 : ((x.name > y.name) ? 1 : -1 ));
 }
 
-function SortByEmail(x,y) {
+function SortByEmail(x, y) {
     return ((x.email == y.email) ? 0 : ((x.email > y.email) ? 1 : -1 ));
 }
