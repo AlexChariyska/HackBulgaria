@@ -1,0 +1,75 @@
+body {
+  background: url("../img/header_background.png") no-repeat;
+  padding-top: 70px; }
+
+.receipts-wrapper {
+  overflow: hidden; }
+
+.receipt_date {
+  display: block; }
+
+.receipt_img {
+  width: 100%;
+  border-radius: 5px; }
+
+.receipt_more-info {
+  display: block; }
+
+.aside-wrapper {
+  overflow: hidden;
+  margin: 0 auto; }
+  .aside-wrapper .aside-wrapper_img {
+    background: url("http://localmilkblog.com/wp-content/uploads/2013/07/sidebar_logo.png") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    width: 100%;
+    height: 340px; }
+  .aside-wrapper .search-field {
+    border: none; }
+  .aside-wrapper .search-btn {
+    background: url("../img/search.png") no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 80%; }
+  .aside-wrapper .social-icons__fb {
+    background: url("../img/facebook.png") no-repeat;
+    width: 48px;
+    height: 48px; }
+  .aside-wrapper .social-icons__tw {
+    background: url("../img/footer_social_twitter.png") no-repeat;
+    width: 48px;
+    height: 48px; }
+  .aside-wrapper .social-icons__ins {
+    background: url("../img/instagram.png") no-repeat;
+    width: 48px;
+    height: 48px; }
+  .aside-wrapper .social-icons__plus {
+    background: url("../img/bloglovin.png") no-repeat;
+    width: 48px;
+    height: 48px; }
+
+.receipt_gallery {
+  list-style: none; }
+
+.contact-wrapper label, .contact-wrapper input {
+  display: block; }
+
+.receipt_more-info {
+  background: url("../img/read-more.png") no-repeat;
+  display: block;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px; }
+
+.receipt_title {
+  background: url("../img/flower.png") no-repeat;
+  line-height: 1.5;
+  padding: 0 50px; }
+
+.receipt_ingredients {
+  list-style-image: url("../img/tick.png"); }
+
+/*# sourceMappingURL=main.css.map */

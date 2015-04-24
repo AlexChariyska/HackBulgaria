@@ -1,0 +1,42 @@
+extends ./layouts/main.jade
+block content
+    .col-md-9
+        .row.receit-wrapper
+            h1.receipt_title Receipt Title
+            date.receipt_date 01.01.2015
+            img.receipt_img(src="http://placehold.it/350x150", alt="receipt1")
+            h3.receipt_more-info Ingridients
+            ul.receipt_ingredients
+                li Solt
+                li Sugar
+                li Oil
+            h2 How to make it?
+            p.receipt_info
+            | Etiam lobortis a metus laoreet luctus. Suspendisse vitae dignissim magna.
+            | Duis quis nisl luctus, lacinia purus nec, ullamcorper eros. Sed id arcu sapien.
+            | Sed aliquam viverra nisi, vitae lobortis lectus mattis vel. Morbi ut dictum eros.
+            | Fusce condimentum interdum blandit.
+
+            h2 Gallery
+            ul.receipt_gallery
+                li.col-md-4
+                    img(src="http://placehold.it/250x150")
+                li.col-md-4
+                    img(src="http://placehold.it/250x150")
+                li.col-md-4
+                    img(src="http://placehold.it/250x150")
+        .row.comments-wrapper
+            h2 Comments
+            hr
+            .comment-container.col-xs-12
+                h3 By dasdasdsa
+                date 02.02.1320
+                p Bla bla bla bla bla bla
+            .comment-container.col-xs-12
+                h3 By dasdasdsa
+                date 02.02.1320
+                p Bla bla bla bla bla bla
+            .comment-container.col-xs-12
+                h3 By dasdasdsa
+                date 02.02.1320
+                p Bla bla bla bla bla bla

@@ -1,0 +1,48 @@
+doctype html
+html
+    head
+        title Shopping Cart
+        link(href='lib/bootstrap/dist/css/bootstrap.css', rel="stylesheet", type="text/css")
+        link(href='lib/fontawesome/css/font-awesome.css', rel="stylesheet", type="text/css")
+        link(href='css/main.css', rel="stylesheet", type="text/css")
+    body
+        nav.navbar.navbar-default
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/') Bootstrap Shopping Cart</a>
+                .collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+                    ul.nav.navbar-right.navbar-nav
+                        li.active
+                            a(href='/')
+                                i.fa.fa-home.fa-3x
+                                |Home
+                        li
+                            a(href="#")
+                                i.fa.fa-star-half-o.fa-3x
+                                |Promotions
+                        li
+                            a(href='cart')
+                                i.fa.fa-shopping-cart.fa-3x
+                                |Cart
+
+        div.container
+            .row
+                .col-xs-3
+                    h3 Aside navigation
+                    ul.nav.nav-stacked
+                        li
+                            a(href='#') Horses
+                        li
+                            a(href='#') Pigs
+                        li
+                            a(href='#') Fish
+                        li
+                            a(href='#') Meat
+                block content
+    script(src='lib/jquery/dist/jquery.js')
+    script(src='lib/bootstrap/dist/js/bootstrap.js')
