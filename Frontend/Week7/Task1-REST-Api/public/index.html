@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Rest Api</title>
+        <style>
+            table{
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            table, tr,th,td {
+                border: 1px solid black;
+                margin: 20px;
+                padding: 10px;
+            }
+            th{
+                background: #A7C942;
+            }
+
+            form {
+                margin: 20px;
+            }
+
+            label, input {
+                display: block;
+            }
+
+            .btns {
+                padding: 10px;
+                margin: 10px;
+                color: white;
+                background: #DB0606;
+                border: none;
+                border-radius: 5px;
+            }
+            .btns:hover{
+                background: #FE0032;
+            }
+            a{
+                text-decoration: none;
+                color: green;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Rest Api</h1>
+            <label for="name">Name:</label> <input type="text" id="name">
+            <label for="email">Email:</label> <input type="text" id="email">
+            <button id="btn-add" class="btns">Add student</button>
+        </form>
+        <div>
+            <table id="container">
+                <thead>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Email:</th>
+                        <th>Actions:</th>
+                    </tr>
+                </thead>
+                <tbody id="container__body">
+                </tbody>
+            </table>
+        </div>
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

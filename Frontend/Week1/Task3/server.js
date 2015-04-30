@@ -1,12 +1,12 @@
-"use strict"
+"use strict";
 
 // dependancies
-var express = require('express')
+var express = require('express');
 var fs = require("fs");
 var posts = require("./posts.json");
 
 // create app
-var app = express()
+var app = express();
 
 
 // configuration and middleware 
@@ -17,7 +17,7 @@ app.set('view engine', 'jade');
 // routes
 app.get('/', function (req, res) {
   res.render('index', {posts: posts});
-})
+});
 
 // listen for files: /post -> /views/post.jade
 app.get("/:fileName", function(req, res, next){
@@ -38,15 +38,12 @@ app.get("/:fileName", function(req, res, next){
   } else {
     next();
   }
-})
+});
 
 
 // set up server
 var server = app.listen(3000, function () {
 
-  var host = server.address().address
+  var host = server.address().address;
   var port = server.address().port
-
-  console.log('Example app listening at http://%s:%s', host, port)
-
-})
+});
