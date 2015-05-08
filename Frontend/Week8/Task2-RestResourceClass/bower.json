@@ -1,0 +1,17 @@
+{
+  "name": "Task2-RestResourceClass",
+  "version": "0.0.0",
+  "homepage": "https://github.com/AlexChariyska/HackBulgaria",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "q": "1.x",
+    "jquery": "~2.1.4"
+  }
+}

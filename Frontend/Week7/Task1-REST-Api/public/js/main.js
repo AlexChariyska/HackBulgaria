@@ -14,7 +14,6 @@ var StudentsApi = (function () {
             studentsResult = result;
             for (var student in studentsResult) {
                 if (studentsResult[student] != null) {
-                    debugger;
                     container.append("<tr><td>" + studentsResult[student].name +
                     "</td><td>" + studentsResult[student].email +
                     "</td><td><a data-id='" + student + "' id='btn_edit_" + student + "' href='#'>Edit</a><a data-id='" + student + "' id='btn_delete_" + student + "' href='#'>Delete</a></td></tr>");
@@ -85,5 +84,3 @@ var StudentsApi = (function () {
         })
     }
 });
-
-StudentsApi();

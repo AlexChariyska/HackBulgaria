@@ -31,7 +31,7 @@ html
                                 | Contact
         div.container
             .row
-                aside.col-md-3.aside-wrapper
+                aside.col-md-3.col-sm-12.col-xs-12.aside-wrapper
                     .aside-wrapper_img
                     ul.nav.nav-justified.nav-pills
                         li
@@ -43,19 +43,22 @@ html
                         li
                             a(href="#").social-icons__plus
 
-                    input.search-field(type="text", placeholder="Search...")
-                    a.search-btn(href="#")
+                    input#search-field.search-field(type="text", placeholder="Search...")
+                    a#search-btn.search-btn(href="#")
 
 
                     h1 Filters
                     ul.nav.nav-pills.nav-stacked
                         li
-                            a(href='#') Deserts
+                            a#dessert_filter(href='#') Deserts
                         li
-                            a(href='#') Coctails
+                            a#pasta_filter(href='#') Pasta
                         li
-                            a(href='#') Exotic
+                            a#chicken_filter(href='#') Chicken
+                        li
+                            a#exotic_filter(href='#') Exotic
 
                 block content
     script(src='lib/jquery/dist/jquery.js')
     script(src='lib/bootstrap/dist/js/bootstrap.js')
+    script(src='js/main.js')

@@ -1,9 +1,21 @@
+@font-face
+  font-family: myFirstFont
+  src: url(../fonts/KaushanScript-Regular.ttf)
+
+
 body
   background: url("../img/header_background.png") no-repeat
   padding-top: 70px
+  font-family: myFirstFont
+  font-size: 16px
+
+a:hover
+  text-decoration: none
 
 .receipts-wrapper
   overflow: hidden
+  font-size: 18px
+  height: 700px
 
 .receipt_date
   display: block
@@ -27,7 +39,13 @@ body
     height: 340px
 
   .search-field
+    margin-left: 20px
     border: none
+    outline: none
+    font-size: 20px
+
+  .search-field:active
+    outline: none
 
   .search-btn
     background: url("../img/search.png") no-repeat
@@ -41,6 +59,7 @@ body
     background: url("../img/facebook.png") no-repeat
     width: 48px
     height: 48px
+    display: block
 
   .social-icons__tw
     background: url("../img/footer_social_twitter.png") no-repeat
@@ -60,10 +79,18 @@ body
 .receipt_gallery
   list-style: none
 
+  img
+    margin: 10px
+
 .contact-wrapper
 
   label, input
+    font-size: 18px
     display: block
+    width: 100%
+
+  textarea
+    width: 100%
 
 .receipt_more-info
   background: url("../img/read-more.png") no-repeat
@@ -73,10 +100,32 @@ body
   text-align: center
   padding-top: 10px
 
+.receipt_more-info:hover
+  text-decoration: none
+
 .receipt_title
   background: url("../img/flower.png") no-repeat
   line-height: 1.5
-  padding: 0 50px
+  padding: 0 0 0 50px
+  font-size: 26px
 
 .receipt_ingredients
   list-style-image: url('../img/tick.png')
+
+.nav-moveFromTopFade
+  -webkit-animation: moveFromTopFade .7s ease both
+  animation: moveFromTopFade .7s ease both
+
+@-webkit-keyframes moveFromTopFade
+
+  from
+    opacity: 0.3
+    -webkit-transform: translateY(-100%)
+
+@keyframes moveFromTopFade
+
+  from
+    opacity: 0.3
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%)
+
