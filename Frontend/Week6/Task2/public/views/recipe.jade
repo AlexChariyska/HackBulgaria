@@ -1,21 +1,23 @@
-extends ./layouts/main.jade
-block content
-    .col-md-9
+.col-md-9
         .row.receit-wrapper
-            h1.receipt_title Receipt Title
+            h1.receipt_title= recipe.label
             date.receipt_date 01.01.2015
-            img.receipt_img(src="http://placehold.it/350x150", alt="receipt1")
+            img.receipt_img(src=recipe.image, alt="receipt1")
             h3.receipt_more-info Ingridients
             ul.receipt_ingredients
                 li Solt
                 li Sugar
                 li Oil
             h2 How to make it?
-            p.receipt_info
-            | Etiam lobortis a metus laoreet luctus. Suspendisse vitae dignissim magna.
-            | Duis quis nisl luctus, lacinia purus nec, ullamcorper eros. Sed id arcu sapien.
-            | Sed aliquam viverra nisi, vitae lobortis lectus mattis vel. Morbi ut dictum eros.
-            | Fusce condimentum interdum blandit.
+                p.receipt_info
+                    span Source:
+                    span= recipe.recipe.source
+                p.receipt_info
+                    span Calories:
+                    span= recipe.recipe.calories.toFixed(2)
+                p.receipt_info
+                    span Diet Labels:
+                    span= recipe.recipe.dietLabels
 
             h2 Gallery
             ul.receipt_gallery

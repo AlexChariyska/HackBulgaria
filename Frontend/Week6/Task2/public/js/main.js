@@ -1,15 +1,15 @@
 'use strict';
 
 $(document).ready(function () {
+    var recipeCollection = {};
     var nav = $('.navbar')[0];
     requestAnimationFrame(navigationEffect);
 
-    function navigationEffect(){
+    function navigationEffect() {
         if (window.scrollY >= 70) {
             nav.style.background = '#F6F6EF';
             nav.classList.add('nav-moveFromTopFade');
         } else {
-            nav.style.background = "transparent";
             nav.classList.remove('nav-moveFromTopFade');
         }
 
@@ -17,134 +17,95 @@ $(document).ready(function () {
     }
 
 
-    $("#search-btn").click(function(){
-       var searchValue=$("#search-field").val().trim();
-        $.ajax({
-            "method": "get",
-            "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=" + searchValue,
-            "headers": {
-                "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-            },
-            "dataType": "json"
-        }).done(function (result) {
-            displayResults(result);
-        });
+    $("#search-btn").click(function () {
+        var searchValue = $("#search-field").val().trim();
+        filterRequest(searchValue);
     });
 
 
-    var wrapper = $("#wrapper > .row");
+    var wrapper = $("#recipesList");
 
-    $.ajax({
-        "method": "get",
-        "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=<required>",
-        "headers": {
-            "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-        },
-        "dataType": "json"
-    }).done(function (result) {
+    var cookingRequest = new Resource("https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=<required>",
+        {"X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"});
+
+    cookingRequest.query().then(function (result) {
         displayResults(result);
     });
 
+
     $("#dessert_filter").click(function () {
-        $.ajax({
-            "method": "get",
-            "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=dessert",
-            "headers": {
-                "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-            },
-            "dataType": "json"
-        }).done(function (result) {
-            displayResults(result);
-        });
+        filterRequest('dessert');
     });
 
     $("#exotic_filter").click(function () {
-        $.ajax({
-            "method": "get",
-            "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=exotic",
-            "headers": {
-                "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-            },
-            "dataType": "json"
-        }).done(function (result) {
-            displayResults(result);
-        });
+        filterRequest('exotic');
     });
 
     $("#pasta_filter").click(function () {
-        $.ajax({
-            "method": "get",
-            "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=pasta",
-            "headers": {
-                "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-            },
-            "dataType": "json"
-        }).done(function (result) {
-            displayResults(result);
-        });
+        filterRequest('pasta');
     });
 
     $("#chicken_filter").click(function () {
-        $.ajax({
-            "method": "get",
-            "url": "https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=chicken",
-            "headers": {
-                "X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"
-            },
-            "dataType": "json"
-        }).done(function (result) {
-            displayResults(result);
-        });
+        filterRequest('chicken');
     });
 
-    function displayResults(result){
-        wrapper.empty();
-        debugger;
-        if(result.hits.length != 0) {
-            var recipeCollection = result.hits;
-            for (var i = 0; i < recipeCollection.length; i++) {
-                var recipeData = recipeCollection[i].recipe;
-                console.log(recipeData.summary);
-                var recipeContainer = $("<article></article>").attr("class", "receipts-wrapper col-md-6 col-sm-6 col-xs-12");
-                var title = $("<h1>" + recipeData.label + "</h1>").attr("class", "receipt_title");
-                var difficulty = $("<span>Level: " + difficultyValue(recipeData.level) + "</span>").attr("class", "receipt_date");
-                var img = $("<img>").attr("class", "receipt_img").attr("src", recipeData.image);
-                var source = $("<p>Source: " + recipeData.source + "</p>").attr("class", "receipt_info");
-                var calories = $("<p>Calories: " + recipeData.calories.toFixed(2) + "</p>").attr("class", "receipt_info");
-                var dietLabels = $("<p>Diet Labels: " + recipeData.dietLabels + "</p>").attr("class", "receipt_info");
-                var info = $("<a></a>").attr("class", "receipt_more-info").attr("href", "").text("More info");
-                recipeContainer.append(title).append(difficulty).append(img);
-                recipeContainer.append(source).append(calories).append(dietLabels);
-                recipeContainer.append(info);
-                wrapper.append(recipeContainer);
+    function displayWithJade(container, fileName, data) {
+
+        return Q($.get(fileName)).then(function (jadeString) {
+            var renderedHtml = jade.render(jadeString, data);
+            container.html(renderedHtml);
+        })
+    }
+
+    function addEventOnBtns() {
+        for (var i = 0; i < recipeCollection.length; i++) {
+            var dataId = recipeCollection[i].recipe.calories;
+            $("[data-id='" + dataId + "']").click(function (event) {
+                var recipe = findRecipe(event.target.getAttribute('data-id'));
+                return displayRecipe(recipe)
+            })
+        }
+    }
+
+    function findRecipe(searched) {
+        for (var i = 0; i < recipeCollection.length; i++) {
+            var lookedFrom = recipeCollection[i].recipe.calories;
+            if(searched == lookedFrom){
+                return recipeCollection[i].recipe;
             }
-        }else{
+        }
+    }
+
+
+    function displayResults(result) {
+        wrapper.empty();
+        if (result.hits.length != 0) {
+            recipeCollection = result.hits;
+            return displayWithJade(wrapper, "/views/recipes.jade", {
+                recipes: result.hits
+            }).then(function () {
+                addEventOnBtns()
+            });
+
+        } else {
             wrapper.append("No results were found! Try again")
         }
     }
 
-    function difficultyValue(value) {
-        switch (value) {
-            case "EASY":
-                return "Easy";
-                break;
-            case "DIFFICULT":
-                return "Difficult";
-                break;
-            case "MODERATE":
-                return "Moderate";
-                break;
-            case "MODERATELY_EASY":
-                return "Moderately easy";
-                break;
-            case "MODERATELY_DIFFICULT":
-                return "Moderately difficult";
-                break;
-            case "VERY_DIFFICULT":
-                return "Very difficult";
-                break;
-            default:
-                return "unknown";
-        }
+
+    function displayRecipe(data) {
+        wrapper.empty();
+        return displayWithJade(wrapper, "/views/recipe.jade", {
+            recipe: data
+        });
+    }
+
+
+    function filterRequest(search) {
+        var cookingFilter = new Resource("https://edamam-recipe-search-and-diet-v1.p.mashape.com/search?_app_id=f97d9d3a&_app_key=0b7d993712a9cacc5d8846a0be403258&q=" + search,
+            {"X-Mashape-Key": "RT5n7xPUGLmshdaR8jZM8YCi2ELBp1PSjdMjsnlWep1IeNGIsi"});
+        cookingFilter.query().then(function (result) {
+            displayResults(result)
+        });
     }
 });

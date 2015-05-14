@@ -1,6 +1,5 @@
 window.onload = function () {
-    var words = ["container", "box", "chocolate"];
-    var container = document.getElementById("container");
+    var words = ["container", "box", "chocolate","monkey"];
     var wordContainer = document.getElementById("word-container");
     var guesses = document.getElementById("guesses");
 
@@ -22,7 +21,11 @@ window.onload = function () {
         event.preventDefault();
         var guess = document.getElementById("letter").value;
         guess.trim();
-        guessLetter(guess, hiddenWord)
+        if (guess.length != 1) {
+            guesses.innerHTML += ("One letter :P</br>");
+        }else{
+            guessLetter(guess)
+        }
     });
 
     function hideWord(word) {
@@ -52,34 +55,33 @@ window.onload = function () {
             });
     }
 
-    function guessLetter(letter, hidden) {
+    function guessLetter(letter) {
         if (lookedWord.indexOf(letter) == -1) {
-            wordContainer += "</br>";
             lifes--;
-            guesses.innerHTML += ("The word doesn't contain the letter. Try again</br>");
-            guesses.innerHTML += ("Lifes: " + lifes + "</br>");
-            wordContainer.innerHTML = hidden;
+            guesses.innerHTML = ("The word doesn't contain the letter. Try again</br>");
+            guesses.innerHTML = ("Lifes: " + lifes + "</br>");
+            wordContainer.innerHTML = hiddenWord;
         } else {
-            var result = getIndicesOf(letter, lookedWord);
-            debugger;
+            var result = getIndexesOf(letter, lookedWord);
 
             for (var i = 0; i < result.length; i++) {
                 var position = result[i];
-                hidden = hidden.replaceAt(position,letter);
+                hiddenWord = hiddenWord.replaceAt(position, letter);
             }
+            console.log(hiddenWord)
+        }
 
-            if (lookedWord === hidden) {
-                guesses.innerHTML += ("You win!");
-                wordContainer.innerHTML = hidden;
-            } else {
-                wordContainer.innerHTML = hidden;
-            }
+        if (lookedWord === hiddenWord) {
+            guesses.innerHTML = ("You win!");
+            wordContainer.innerHTML = hiddenWord;
+        } else {
+            wordContainer.innerHTML = hiddenWord;
         }
 
         if (lifes == 0) {
             guesses.innerHTML += ("You lose!");
         }
-        hiddenWord = hidden;
+
         wordContainer.innerHTML = hiddenWord;
     }
 
@@ -90,7 +92,7 @@ window.onload = function () {
     };
 
 
-    function getIndicesOf(searchStr, str) {
+    function getIndexesOf(searchStr, str) {
         var startIndex = 0, searchStrLen = searchStr.length;
         var index, indices = [];
 
